@@ -1,0 +1,52 @@
+
+BiobankC[which(BiobankC$genetic_ethnic_grouping_f22006_0_0=="Caucasian"),]->cau
+write.table(cbind(cau[,1],cau[,1]),file="eur_tokeep",col.names=F,row.names=F,quote=F)
+
+plink --bfile merged_hla --keep ../eur_tokeep --make-bed --out eur_hla
+
+table(eur$genetic_sex_f22001_0_0)
+
+genetic sex 22001
+
+ table(BiobankC$genetic_ethnic_grouping_f22006_0_0)
+ Caucasian
+ 
+ extract caucasian only
+ extract genetic PCs
+ 
+plink --
+
+
+> grep("21022",colnames(BiobankA),value=T)
+[1] "age_at_recruitment_f21022_0_0"
+
+
+cd /well/todd/users/xnc303/ukbb/imputed/sample2
+/apps/well/tabix/0.2.6/bgzip chr6.hla.sample2.vcf
+/apps/well/tabix/0.2.6/tabix -p vcf chr6.hla.sample2.vcf.gz
+
+cd /well/todd/users/xnc303/ukbb/imputed/sample1
+/apps/well/tabix/0.2.6/bgzip chr6.hla.sample1.vcf
+/apps/well/tabix/0.2.6/tabix -p vcf chr6.hla.sample1.vcf.gz
+
+cd /well/todd/users/xnc303/ukbb/imputed/sample3
+/apps/well/tabix/0.2.6/bgzip chr6.hla.sample3.vcf
+/apps/well/tabix/0.2.6/tabix -p vcf chr6.hla.sample3.vcf.gz
+
+cd /well/todd/users/xnc303/ukbb/imputed/sample4
+gunzip chr6.hla.sample4.vcf.gz
+/apps/well/tabix/0.2.6/bgzip chr6.hla.sample4.vcf
+/apps/well/tabix/0.2.6/tabix -p vcf chr6.hla.sample4.vcf.gz
+
+cd /well/todd/users/xnc303/ukbb/imputed/sample5
+gunzip chr6.hla.sample5.vcf.gz
+/apps/well/tabix/0.2.6/bgzip chr6.hla.sample5.vcf
+/apps/well/tabix/0.2.6/tabix -p vcf chr6.hla.sample5.vcf.gz
+
+
+
+module load BCFtools
+nohup bcftools merge /well/todd/users/xnc303/ukbb/imputed/sample1/chr6.hla.sample1.vcf.gz /well/todd/users/xnc303/ukbb/imputed/sample2/chr6.hla.sample2.vcf.gz /well/todd/users/xnc303/ukbb/imputed/sample3/chr6.hla.sample3.vcf.gz /well/todd/users/xnc303/ukbb/imputed/sample4/chr6.hla.sample4.vcf.gz /well/todd/users/xnc303/ukbb/imputed/sample5/chr6.hla.sample5.vcf.gz -o merged_hla.vcf 
+
+
+plink --vcf merged_hla.vcf --make-bed --out merged_hla
