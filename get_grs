@@ -1,0 +1,19 @@
+
+matrix(nrow=nrow(bd),ncol=0)->bigmat
+read.delim("standard_prs",header=F)->sp
+read.delim("enhanced_prs",header=F)->ep
+c(sp[,1],ep[,1])->ap
+prsn<-vector()
+for(i in 1:length(ap)){
+grep(ap[i],colnames(bd),value=T)->tmp
+c(prsn,tmp)->prsn
+}
+for(i in 1:length(ap)){
+bd[,grep(ap[i],colnames(bd))]->tmp
+cbind(bigmat,tmp)->bigmat
+print(i)
+}
+colnames(bigmat)<-prsn
+
+cbind(bd[,1],bigmat)->prs
+save(prs,file="prs.Rd")
