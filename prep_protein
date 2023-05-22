@@ -1,0 +1,124 @@
+-rw-r--r-- 1 xnc303 todd  13165161 May 15 15:36 olink_instance_2.csv
+-rw-r--r-- 1 xnc303 todd    587995 May 15 15:36 Olink_proteomics_data.pdf
+-rw-r--r-- 1 xnc303 todd     96159 May 15 15:36 olink_processing_start_date.dat
+-rw-r--r-- 1 xnc303 todd       697 May 15 15:36 olink_panel_lot_number.dat
+-rw-r--r-- 1 xnc303 todd     10414 May 15 15:36 olink_batch_number.dat
+-rw-r--r-- 1 xnc303 todd  23654768 May 15 15:36 olink_assay_warning.dat
+-rw-r--r-- 1 xnc303 todd     21948 May 15 15:36 olink_assay_version.dat
+-rw-r--r-- 1 xnc303 todd     36601 May 15 15:36 olink_assay.dat
+-rw-r--r-- 1 xnc303 todd    618206 May 15 15:36 Olink_1536_B0_to_B7_Normalization.pdf
+-rw-r--r-- 1 xnc303 todd    571571 May 15 15:36 Olink_1536_B0_to_B7_FAQ.pdf
+-rw-r--r-- 1 xnc303 todd   9230936 May 15 15:36 Olink_1536_B0_to_B7_Analysis_Report.pdf
+-rw-r--r-- 1 xnc303 todd 578750465 May 15 15:37 olink_instance_0.csv
+-rw-r--r-- 1 xnc303 todd  12639238 May 15 15:37 olink_instance_3.csv
+[xnc303@rescomp1 olink]$ head olink_batch_number.dat
+PlateID	Batch
+0890000000001	0
+0890000000002	1
+0890000000003	1
+0890000000004	1
+0890000000005	1
+0890000000006	1
+0890000000007	1
+0890000000008	1
+0890000000009	1
+[xnc303@rescomp1 olink]$ head olink_assay.dat
+Assay	UniProt	Panel
+AARSD1	Q9BTE6	Oncology
+ABHD14B	Q96IU4	Neurology
+ABL1	P00519	Oncology
+ACAA1	P09110	Oncology
+ACAN	P16112	Cardiometabolic
+ACE2	Q9BYF1	Cardiometabolic
+ACOX1	Q15067	Cardiometabolic
+ACP5	P13686	Cardiometabolic
+ACP6	Q9NPH0	Oncology
+[xnc303@rescomp1 olink]$ head olink_processing_start_date.dat
+PlateID	Panel	Processing_StartDate
+0890000000001	Cardiometabolic	2021-04-28
+0890000000001	Inflammation	2021-04-28
+0890000000001	Neurology	2021-04-28
+0890000000001	Oncology	2021-04-28
+0890000000002	Cardiometabolic	2021-06-08
+0890000000002	Inflammation	2021-06-08
+0890000000002	Neurology	2021-06-15
+0890000000002	Oncology	2021-06-15
+0890000000003	Cardiometabolic	2021-06-08
+[xnc303@rescomp1 olink]$ head olink_panel_lot_number.dat
+Batch	Panel	Panel_Lot_Nr
+0	Cardiometabolic	B04413
+0	Inflammation	B04411
+0	Neurology	B04414
+0	Oncology	B04412
+1	Cardiometabolic	B04413
+1	Inflammation	B04411
+1	Neurology	B04414
+1	Oncology	B04412
+2	Cardiometabolic	B04413
+[xnc303@rescomp1 olink]$ head olink_assay_warning.dat
+PlateID	Assay	Assay_Warning
+0890000000001	AARSD1	PASS
+0890000000001	ABHD14B	PASS
+0890000000001	ABL1	PASS
+0890000000001	ACAA1	PASS
+0890000000001	ACAN	PASS
+0890000000001	ACE2	PASS
+0890000000001	ACOX1	PASS
+0890000000001	ACP5	PASS
+0890000000001	ACP6	PASS
+[xnc303@rescomp1 olink]$ head olink_assay_version.dat
+Panel_Lot_Nr	Assay	Assay_Version
+B04411	ACTN4	1
+B04411	ADA	1
+B04411	ADAM23	1
+B04411	ADGRE2	1
+B04411	AGER	1
+B04411	AGRN	1
+B04411	AGRP	1
+B04411	ALDH3A1	1
+B04411	AMBN	1
+[xnc303@rescomp1 olink]$ 
+
+
+> grep("22009",colnames(BiobankC),value=T)
+ [1] "genetic_principal_components_f22009_0_1" 
+ [2] "genetic_principal_components_f22009_0_2" 
+ [3] "genetic_principal_components_f22009_0_3" 
+ [4] "genetic_principal_components_f22009_0_4" 
+ [5] "genetic_principal_components_f22009_0_5" 
+ [6] "genetic_principal_components_f22009_0_6" 
+ [7] "genetic_principal_components_f22009_0_7" 
+ [8] "genetic_principal_components_f22009_0_8" 
+ [9] "genetic_principal_components_f22009_0_9" 
+[10] "genetic_principal_components_f22009_0_10"
+[11] "genetic_principal_components_f22009_0_11"
+[12] "genetic_principal_components_f22009_0_12"
+[13] "genetic_principal_components_f22009_0_13"
+[14] "genetic_principal_components_f22009_0_14"
+[15] "genetic_principal_components_f22009_0_15"
+[16] "genetic_principal_components_f22009_0_16"
+[17] "genetic_principal_components_f22009_0_17"
+[18] "genetic_principal_components_f22009_0_18"
+[19] "genetic_principal_components_f22009_0_19"
+[20] "genetic_principal_components_f22009_0_20"
+[21] "genetic_principal_components_f22009_0_21"
+[22] "genetic_principal_components_f22009_0_22"
+[23] "genetic_principal_components_f22009_0_23"
+[24] "genetic_principal_components_f22009_0_24"
+[25] "genetic_principal_components_f22009_0_25"
+[26] "genetic_principal_components_f22009_0_26"
+[27] "genetic_principal_components_f22009_0_27"
+[28] "genetic_principal_components_f22009_0_28"
+[29] "genetic_principal_components_f22009_0_29"
+[30] "genetic_principal_components_f22009_0_30"
+[31] "genetic_principal_components_f22009_0_31"
+[32] "genetic_principal_components_f22009_0_32"
+[33] "genetic_principal_components_f22009_0_33"
+[34] "genetic_principal_components_f22009_0_34"
+[35] "genetic_principal_components_f22009_0_35"
+[36] "genetic_principal_components_f22009_0_36"
+[37] "genetic_principal_components_f22009_0_37"
+[38] "genetic_principal_components_f22009_0_38"
+[39] "genetic_principal_components_f22009_0_39"
+[40] "genetic_principal_components_f22009_0_40"
+
