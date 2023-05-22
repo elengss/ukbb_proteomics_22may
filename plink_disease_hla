@@ -1,0 +1,9 @@
+### this needs to be corrected as PCs and batch are included (should not be)
+
+
+
+/well/todd/users/xnc303/plink2 --bfile /well/todd/users/xnc303/ukbb/imputed/eur_hla_prot --pheno pheno_fp --covar /well/todd/users/xnc303/ukbb/olink/cov3_pc10  --glm --covar-col-nums 4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 --maf 0.01 --geno 0.1 --hwe 0.00000001 --covar-variance-standardize --out hla
+
+read.table("hla.dis.glm.logistic.hybrid",header=T)->hy
+hy[which(hy$TEST=="ADD"),]->hy2
+hy2[order(as.numeric(hy2$P)),]->hy3
