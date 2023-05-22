@@ -1,0 +1,23 @@
+
+bd[,grep("131628",colnames(bd))]->uc
+cbind(bd[,1],uc)->uc2
+save(uc2,file="uc2.Rd")
+bd[,grep("131626",colnames(bd))]->cd
+cbind(bd[,1],cd)->cd2
+save(cd2,file="cd2.Rd")
+bd[,grep("131042",colnames(bd))]->ms
+cbind(bd[,1],ms)->ms2
+save(ms2,file="ms2.Rd")
+bd[,grep("131742",colnames(bd))]->ps
+cbind(bd[,1],ps)->ps2
+save(ps2,file="ps2.Rd")
+bd[,grep("131848",colnames(bd))]->tmp1
+bd[,grep("131850",colnames(bd))]->tmp2
+rep(0,length(tmp1))->testvec
+testvec[which(is.na(tmp2)==F)]<-1
+testvec[which(is.na(tmp1)==F)]<-1
+cbind(bd[,1],testvec)->ra2
+save(ra2,file="ra2.Rd") ##### this is 0/1
+bd[,grep("131828",colnames(bd))]->sle
+cbind(bd[,1],sle)->sle2
+save(sle2,file="sle2.Rd")
